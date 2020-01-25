@@ -1,0 +1,744 @@
+:root {
+    --primary: #1976D2;
+    --secondary: #03A9F4;
+    --light-primary: #BBDEFB;
+    --primary-text: #212121;
+    --secondary-text: #FFFFFF;
+    --gray-dark: #757575;
+    --gray-light: #F0F0F0;
+    --shadow: 0 2px 6px var(--gray-dark);
+}
+
+*,
+*:after,
+*:before {
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--primary-text);
+    padding: 1rem;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 95vh repeat(3, min-content);
+    grid-template-columns: [max-start] minmax(5rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [main-end] minmax(5rem, 1fr) [max-end];
+}
+
+.welcomehead {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(187, 222, 251, 0.8)),url(jsguruoffice.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    grid-row: 1/2;
+    grid-column: max-start/max-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0 , 100% 0, 100% 100%, 0 85%);
+}
+
+.navitemsright {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notifications {
+    position: absolute;
+    top: 3.5rem;
+    right: 18rem;
+    font-size: 5rem;
+    color: var(--primary);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notificationcount {
+    font-size: 3rem;
+}
+
+.greetuser {
+    text-align: center;
+    font-size: 2rem;
+    max-width: 15rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.toadminlink {
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-text);
+    display: block;
+    border-radius: 50px;
+    border: 1px solid black;
+    padding: .5rem;
+}
+
+.requestcount {
+    margin-top: 1rem;
+    font-weight: 600;
+    text-decoration: underline;
+    border: 1px solid black;
+    padding: 1rem;
+    color: var(--primary-text);
+}
+
+.navitemsleft {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-weight: 600;
+    display: flex;
+}
+
+.authlink {
+    text-align-last: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 20px;
+    border: 1px solid var(--primary);
+    color: var(--primary-text);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.authlink:hover {
+    transform: scale(1.1);
+}
+
+.login {
+    background-color: var(--primary);
+    color: var(--secondary-text);
+}
+
+.signup {
+    margin-right: 2rem;
+}
+
+.headmid {
+    margin-top: -5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 30%;
+}
+
+.welcometext {
+    font-weight: 300;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.buttons {
+    display:flex;
+}
+
+[class^='button-'] {
+    display: block;
+    font-size: 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+[class^='button-']:hover{
+    transform: scale(1.1) translateY(-3px);
+}
+
+.buttons a:not(:first-child) {
+    margin-left: 2rem;
+}
+
+.button-main {
+    background-color: var(--primary);
+    color: var(--secondary-text);
+    font-weight: 600;
+}
+
+.button-read {
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text);
+}
+
+.readmore {
+    grid-row: 2/3;
+    grid-column: main-start/main-end;
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+}
+
+.featureicon {
+    font-size: 10rem;
+    color: var(--primary);
+}
+
+.featurehead {
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.featuretext {
+    margin-top: 1rem;  
+}
+
+.bookshelf {
+    margin-top: 3.5rem;
+    padding: 2rem;
+    background-color: var(--gray-light);
+    grid-row: 3/4;
+    grid-column: max-start/max-end;
+    text-align: center;
+}
+
+.bookshelfhead {
+    font-size: 8rem;
+}
+
+.line {
+    display: inline-block;
+    background-color: var(--primary);
+    height: 1rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+}
+
+.divider {
+    background-color: var(--gray-dark);
+    height: .2rem;
+    margin-top: 2rem;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchinput {
+    width: 50%;
+    height: 3rem;
+    padding: 1rem;
+    border: 1px solid var(--gray-dark);
+    border-radius: 50px;
+    outline: none;
+    font-family: inherit;
+    font-size: 2rem;
+}
+
+.searchicona {
+    color: var(--primary);
+    margin-left: 1rem;
+}
+
+.searchicona:hover {
+    transform: scale(1.1);
+}
+
+.searchicon {
+    font-size: 5rem;
+}
+
+.categorysearch {
+    display: flex;
+}
+
+.categorylabel {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categorycheck {
+    display: none;
+}
+
+.customlabel {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--primary); 
+    margin-left: 1rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+}
+
+.categorylabel:hover > .customlabel {
+  transform: scale(1.1) translateY(-3px);
+}
+
+.categorycheck:checked ~ .categorylabel .customlabel {
+    background-color: var(--primary);
+}
+
+.categories {
+    max-width: 15rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.books {
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+}
+
+.book {
+    padding: 2rem;
+}
+
+.bookanchor {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.bookicon {
+    font-size: 20rem;
+    color: var(--primary);
+}
+
+.loadericon {
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    margin: 5rem;
+    font-size: 2rem;
+}
+
+.booktitle {
+    font-weight: 600;
+    font-size: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bookauthor {
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bookdisplay {
+    display: flex;
+    justify-content: center;
+}
+
+.bookdetails {
+    flex: 1;
+    max-width: 120rem;
+}
+
+.bookpic {
+    font-size: 30rem;
+    color: var(--primary);
+    flex-basis: 40%;
+}
+
+.bookname {
+    font-size: 7rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bookdescription {
+    font-size: 1.3rem;
+    font-weight: 300;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.button-borrow {
+    background-color: var(--primary);
+    color: var(--secondary-text);
+    font-weight: 600;
+    width: 50%;
+    margin: 2rem auto 0 auto;
+}
+
+.button-notavailable {
+    background-color: var(--primary-text);
+    color: var(--secondary-text);
+    font-weight: 600;
+    width: 50%;
+    margin: 2rem auto 0 auto;
+}
+
+.button-notavailable:hover {
+    transform: none;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--primary-text);
+    color: var(--secondary-text);
+    grid-row: 4/5;
+    grid-column: max-start/max-end;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
+.notificationspread {
+    grid-column: max-start/max-end;
+    grid-row: 1/-1;
+    visibility: hidden;
+    opacity:0;
+    background-color: rgba(33, 33, 33, 0.5);
+    z-index: 5000;
+}
+
+.notificationspreadshow {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.specificnotifications {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-text);
+    border: 2px solid var(--primary);
+}
+
+.specificnotifications:first-child {
+    margin-top: 2rem;
+}
+
+.acceptedrequest {
+    border: 1px solid var(--primary);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+
+}
+
+/* ADMIN PAGE */
+
+.admincontainer {
+    display: grid;
+    grid-template-rows: 95vh repeat(2,min-content);
+    grid-template-columns: [max-start] minmax(5rem, 1fr) [main-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [main-end] minmax(5rem, 1fr) [max-end];
+}
+
+.adminhead {
+    background-image: linear-gradient(to right, rgba(25, 118, 210, 0.8), rgba(189, 189, 189, 0.8)),url(headerrobot2.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    grid-column: max-start / max-end;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    clip-path: polygon(0 0 , 100% 0, 100% 100%, 0 85%);
+}
+
+.welcomeadmin {
+    color: var(--secondary-text);
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+.messageadmin {
+    color: var(--secondary-text);
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.adminmid {
+    margin-top: -3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.admincontrols {
+    grid-row: 2/3;
+    grid-column: main-start/main-end;
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26.5rem, 1fr));
+    margin-bottom: 3.5rem;
+}
+
+.admingearicon {
+    color: var(--secondary-text);
+    font-size: 5rem;
+}
+
+.controlbox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    padding: 1rem;
+}
+
+.controlbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    width: 30rem;
+    height: 10rem;
+    border: none;
+    background-color: var(--primary);
+    font: inherit;
+    color: white;
+    font-size: 2rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.controlbutton:hover {
+    transform: scale(1.1) translateY(-3px);
+}
+
+.controlbutton[class*='add'] {
+    background-color: green;
+}
+
+.controlbutton[class*='delete'] {
+    background-color: red;
+}
+
+.controlbutton[class*='back'] {
+    background-color: var(--secondary);
+}
+
+.adminform {
+    margin-top: -3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adminform > * {
+    margin-bottom: 2rem;    
+}
+
+.adminform label {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+.adminform input {
+    width: 30%;
+    border: 1px solid var(--primary);
+}
+
+.adminfooter {
+    text-align: center;
+    background-color: var(--primary-text);
+    color: var(--secondary-text);
+    grid-row: 3/4;
+    grid-column: max-start/max-end;
+}
+
+.edit {
+    display: flex;
+    justify-content: center;
+}
+
+.edit .adminlist {
+    margin-top: -3.5rem;
+    overflow-y: scroll;
+    height: 600px;
+    flex-basis: 30%;
+}
+
+.edit .adminlist h3 {
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem;
+}
+
+.edit .adminform input{
+    width: 100%; 
+}
+
+.edit .adminform {
+    margin-left: 5rem;
+}
+
+.active {
+    background-color: var(--secondary);
+}
+
+.message {
+    position: absolute;
+    text-align: center;
+    top: 10rem;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 50rem;
+    z-index: 500;
+}
+
+.success {
+    background-color: green;
+}
+
+.failed {
+    background-color: red;
+}
+
+.message p {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--secondary-text);
+}
+
+/* AUTH PAGE */
+
+.authformcontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authform {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-light);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.authform .authinput {
+    border-radius: 50px;
+    border: 1px solid var(--primary);
+    width: 50%;
+    height: 4rem;
+    font: inherit;
+    font-size: 2rem;
+    outline: none;
+    padding: 1rem;
+    margin-bottom: 2rem;
+} 
+
+.authform label {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* REQUESTS PAGE */
+
+.requestcontainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.requests {
+    background-color: var(--gray-light);
+    margin: 0 auto;
+    width: 50%;
+    height: 500px;
+    overflow-y: scroll;
+    text-align: center;
+    padding: 1rem;
+}
+
+.request {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+    height: 10rem;
+}
+
+.requestinfo {
+    margin-right: 10rem;
+    width: 25rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.button-request {
+    padding: 1rem;
+    width: 10rem;
+    color: var(--secondary-text);
+    border: 3px solid transparent; 
+}
+
+.requestaccept {
+    margin-right: 5rem;
+    background-color: var(--primary);
+}
+
+.requestreject {
+    background-color: red;
+}
+
+.admincategories, .userroles {
+    cursor: pointer;
+}
+
+.button-returnbook {
+    border: 1px solid transparent;
+    background-color: var(--primary-text);
+    color: var(--secondary-text);
+}

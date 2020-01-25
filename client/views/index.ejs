@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>JSGuruLibrary</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="notificationspread">
+                <div class="specificnotifications">
+                    <!-- NOTIFICATIONS GO HERE -->
+                </div>
+            </div>
+            <header class="welcomehead">
+                <div class="navitemsleft">
+                    <% if (user){ %>
+                        <%- '<a class="authlink signup" href="/users/logout">Log out</a>' %>
+                    <% } else{ %>
+                        <%- '<a class="authlink signup" href="/signup">Sign up</a>' %>
+                        <%- '<a class="authlink login" href="/login">Log in</a>' %>
+                    <% }; %>
+                </div>
+                <% if (user){ %>
+                    <%- `<div class="notifications"><ion-icon class="notificationbell" name="notifications-outline"></ion-icon></div>`%>
+                <% }; %>
+                <div class="navitemsright">
+                    <% if (user){ %>
+                        <%- `<p class="greetuser">Hello, ${user.user_name}</p>` %>
+                        <% if (user.user_role === 'admin'){ %>
+                            <%- '<a class="toadminlink" href="/admin">ADMIN PANEL</a>' %>
+                        <% }; %>
+                    <% }; %> 
+                </div>
+                <div class="headmid">
+                    <img class="logo" src="jsgurulogo.png" alt="Logo">
+                    <h1 class="welcometext">Welcome to the JSGuru Library App!</h1>
+                    <div class="buttons">
+                        <a href="" class="button-main">Go to the library</a>
+                        <a href="" class="button-read">Read more</a>
+                    </div>
+                </div>
+            </header>
+            <section class="readmore">
+                <div class="feature">
+                    <ion-icon class="featureicon" name="school"></ion-icon>
+                    <h3 class="featurehead">Learn easier</h3>
+                    <p class="featuretext">Technology is growing rapidly, which is why you should always be learning. Pick up a book today!</p>
+                </div>
+                <div class="feature">
+                    <ion-icon class="featureicon" name="bug"></ion-icon>
+                    <h3 class="featurehead">Bugs? Horrible.</h3>
+                    <p class="featuretext">Read about the best practices so you dont have to face those tedious bugs ever again!</p>
+                </div>
+                <div class="feature">
+                    <ion-icon class="featureicon" name="glasses"></ion-icon>
+                    <h3 class="featurehead">Bragging rights</h3>
+                    <p class="featuretext">Be cool as ice while solving all the hardest tasks thrown at your face.</p>
+                </div>
+            </section>
+            <section class="bookshelf">
+                <h1 class="bookshelfhead">Library</h1>
+                <div class="line"></div>
+                <div class="search">
+                    <div class="searchbar">
+                        <input class="searchinput" type="text">
+                        <a class="searchicona" href=""><ion-icon class="searchicon" name="search"></ion-icon></a>
+                    </div>
+                    <div class="categorysearch">
+                        <input class="categorycheck" id="category" type="checkbox">
+                        <label class="categorylabel" for="category">
+                            Search by category?
+                            <span class="customlabel"></span>
+                        </label>
+                        <select disabled class="categories" name="" id="">
+                            <option disabled selected value> -- select an option -- </option>
+                            <!-- CATEGORY OPTIONS LOAD HERE -->
+                        </select>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="books">
+                    <!-- BOOKS LOAD HERE -->
+                    <!-- BOOK DISPLAY LOADS HERE TOO-->
+                </div>
+            </section>
+            <footer>
+                Tarik Trokic &#9400; 2019
+            </footer> 
+        </div>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="./js/clientAppBundle.js"></script>
+    </body>
+</html>
