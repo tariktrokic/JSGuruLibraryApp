@@ -6,6 +6,7 @@ The app was created without any front-end frameworks, part of my task was to bui
 ## Getting started
 ```
 1. You need to create a database in any SQL dialect then set the .env variables accordingly for sucessfully establishing the connection to that database. (File MUST be called .env in root folder)
+NOTE: env variables that are needed: DATABASE, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_HOST, SQL_DATABASE_DIALECT, JWT_SECRET
 2. Head over to the /server folder and call npm run start to start up the application. The database will then be set up for you. 
 3. When you load up the app for the first time, there will be no books or categories. You need to create a user on the sign up page (Button in top left corner).
 4. Whenever a user is created its default role is 'user', you need to update the users role manually from your database to 'admin' to give him admin rights. (This is only needed for the first admin, after this you can give admin rights from the edit user page on the admin panel).
