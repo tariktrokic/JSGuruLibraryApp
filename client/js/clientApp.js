@@ -216,14 +216,14 @@ if (isAuthForms) {
 let isRequestsPage = document.querySelector('.requestcontainer');
 if (isRequestsPage) {
     let controlRequest = async(event) => {
-        if (event.target.matches('.requestaccept')){
+        if (event.target.matches('.requestaccept')) {
             let result = await RequestControls.handleRequest(event.target.dataset.requestid,false);
             PageUI.renderMessage(result);
-            event.target.parentElement.remove();
+            if (!((result.status + '').startsWith('4'))) event.target.parentElement.remove();
         } else if (event.target.matches('.requestreject')) {
             let result = await RequestControls.handleRequest(event.target.dataset.requestid,true);
             PageUI.renderMessage(result);
-            event.target.parentElement.remove(); 
+            if (!((result.status + '').startsWith('4'))) event.target.parentElement.remove();
         };
     };
 
