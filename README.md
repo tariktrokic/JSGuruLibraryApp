@@ -5,7 +5,9 @@ The app was created without any front-end frameworks, part of my task was to bui
 
 ## Deployed app link: https://jsgurulibraryapp.herokuapp.com/ 
 Admin account so you can access the admin panel that is guarded by R2-D2:
+
 Username: Tarik
+
 Password: admin
 
 ### Built with
