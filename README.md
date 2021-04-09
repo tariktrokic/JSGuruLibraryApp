@@ -4,7 +4,7 @@ An app I made during my internship at JSGuru. The task was to create a full stac
 The app was created without any front-end frameworks, part of my task was to build everything using vanilla JavaScript so I grow a feeling for how everything works "under the hood". 
 
 ## Deployed app link: https://jsgurulibraryapp.herokuapp.com/ 
-Admin account so you can access the admin panel that is guarded by R2-D2:
+Admin account so you may access the admin panel that is guarded by R2-D2:
 
 Username: Tarik
 
